@@ -2,6 +2,7 @@ const _ = require("underscore");
 const verifyAddressAndThrow = require("../utils/addressValidator");
 const db = require("../db");
 const Geolocation = require("../db/model");
+const fetch = require('node-fetch');
 
 function findGeolocationInDb(address, addressType) {
   if (addressType.isIP) {
