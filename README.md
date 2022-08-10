@@ -13,7 +13,7 @@ API is secured with bearer token. Obtaining token with **/api/v1/login**. Token 
 User registration form not implemented. Hardcoded user data available:
 
 #### Request
-Node.js example code:
+JS example code:
 ```js
 fetch('http://localhost:8080/api/v1/login', {
     method: "POST",
@@ -153,11 +153,12 @@ curl --location --request DELETE 'localhost:8080/api/v1/geolocation/74.6.231.20'
 Deployed on Node.js v.18
 Option A) In root directory of the repository:
 ```
+npm install
 npm start
 ```
 Option B) Downloading Docker image and deploying in Docker container:
 ```
-docker run -dp 5000:5000 leszekkaleta/geolocation-api
+docker run -dp 8080:8080 leszekkaleta/geolocation-api
 ```
 
 Local deplyment serves API on port 8080: localhost:8080/api/v1
