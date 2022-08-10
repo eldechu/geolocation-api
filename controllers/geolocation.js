@@ -50,8 +50,6 @@ exports.postGeolocation = (req, res, next) => {
 
   Promise.resolve()
     .then(() => {
-      console.log("here");
-
       return findGeolocationInDb(address, addressType).then((geolocation) => {
         if (geolocation) {
           const error = new Error("Address already in DB");

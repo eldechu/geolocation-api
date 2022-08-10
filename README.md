@@ -7,7 +7,9 @@ Nevertheless service starts with few initial entries in DB, so GET, DETLETE meth
 ## Usage
 ### Login
 API is secured with bearer token. Obtaining token with **/api/v1/login**. Token expires in 6 hours.
+
 **method: POST**
+
 User registration form not implemented. Hardcoded user data available:
 
 #### Request
@@ -44,14 +46,20 @@ curl --location --request POST 'localhost:8080/api/v1/login' \
 
 ### Get geolocation data
 API provides access to one or all geolocation objects with 1 request:
+
 **/api/v1/geolocation** - all objects
+
 **/api/v1/geolocation/:address** - 1 object
+
 **method: GET**
+
 **:address** can be an IP (both IPv4 and IPv6 acceptable) or domain
+
 Service responses with data stored in Geolocation-API database (not ipstack.com).
 
 ##### Request
-Node.js example code:
+
+JS example code:
 ```js
  fetch('http://localhost:8080/api/v1/geolocation', {
     method: "GET",
@@ -81,12 +89,16 @@ curl --location --request GET 'localhost:8080/api/v1/' \
 
 ### Add geolocation data
 Service adds new geolocation data based on data received from ipstack.com API.
+
 **/api/v1/geolocation/:address**
+
 **method: POST**
+
 **:address** can be an IP (both IPv4 and IPv6 acceptable) or domain
 
 ##### Request
-Node.js example code:
+
+JS example code:
 ```js
 fetch('http://localhost:8080/api/v1/geolocation', {
     method: "POST",
@@ -112,12 +124,16 @@ curl --location --request POST 'localhost:8080/api/v1/geolocation' \
 
 ### Delete geolocation data
 Service deletes single entry from its storage if address is found.
+
 **/api/v1/geolocation/:address**
+
 **method: DELETE**
+
 **:address** can be an IP (both IPv4 and IPv6 acceptable) or domain
 
 ##### Request
-Node.js example code:
+
+JS example code:
 ```js
  fetch('http://localhost:8080/api/v1/geolocation/google.com', {
     method: "DELETE",
@@ -141,7 +157,7 @@ npm start
 ```
 Option B) Downloading Docker image and deploying in Docker container:
 ```
-docker run -dp 8080:8080 leszekkaleta/geolocation-api
+docker run -dp 5000:5000 leszekkaleta/geolocation-api
 ```
 
 Local deplyment serves API on port 8080: localhost:8080/api/v1
