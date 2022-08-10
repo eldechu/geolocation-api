@@ -6,12 +6,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
     "test": "mocha"
   },
   "repository": {
     "type": "git",
-    "url": " todo "
+    "url": "https://github.com/eldechu/geolocation-api.git"
   },
   "dependencies": {
     "body-parser": "^1.20.0",
