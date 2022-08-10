@@ -42,7 +42,7 @@ sequelize
     fillInitialTestData();
   })
   .then(() => {
-    app.listen(8080);
+    app.listen(process.env.PORT || 5000);
   })
   .catch((err) => {
     console.log(err);
